@@ -11,12 +11,12 @@ class RegionAdapter(private val list: List<String>, private val customItemListen
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val v = LayoutInflater.from(
+        val itemView = LayoutInflater.from(
             parent.context
         ).inflate(R.layout.item_row, parent, false)
 
-        val myViewHolder = MyViewHolder(v)
-        v.setOnClickListener {
+        val myViewHolder = MyViewHolder(itemView)
+        itemView.setOnClickListener {
             customItemListener.onItemClickRegion(list[myViewHolder.adapterPosition])
         }
         return myViewHolder
